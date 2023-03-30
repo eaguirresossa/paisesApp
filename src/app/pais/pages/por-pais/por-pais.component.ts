@@ -16,14 +16,15 @@ export class PorPaisComponent {
   termino: string = "";
   hayError: boolean = false;
   paises: Country[] = [];
+  placeholder: string = 'Buscar por país...';
 
 
   //Inyectamos el servicio
   constructor( private PaisService: PaisService){}
 
-  buscar(){
+  buscar( termino: string){
     this.hayError = false;
-    //console.log(this.termino);
+    this.termino = termino;
 
     this.PaisService.buscarPais(this.termino)
       .subscribe( (paises) => {
@@ -34,8 +35,12 @@ export class PorPaisComponent {
         this.hayError = true;
         this.paises = [];
       }
-
-
       );
+  }
+
+  sugerencias( termino: string){
+    this.hayError = false;
+    //TODO: Crear sugerencias
+
   }
 }
