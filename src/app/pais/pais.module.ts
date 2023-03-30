@@ -26,7 +26,8 @@ import { AllComponent } from './pages/all/all.component';
     PorCapitalComponent,
     PorPaisComponent,
     PorRegionComponent,
-    VerPaisComponent
+    VerPaisComponent,
+    AllComponent
   ],
   imports: [
     CommonModule,
