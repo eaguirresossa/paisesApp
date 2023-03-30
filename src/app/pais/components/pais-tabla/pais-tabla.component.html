@@ -11,7 +11,9 @@
   </thead>
 
   <tbody>
-    <tr *ngFor="let pais of paises; let i = index">
+    <tr *ngFor="let pais of paises; let i = index"
+        class="animate__animated animate__fadeIn animate__faster"
+    >
       <td>{{ i + 1 }}</td>
       <td>{{pais.name.common}}</td>
       <td>
