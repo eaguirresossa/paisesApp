@@ -40,4 +40,11 @@ export class PaisService {
     //return this.http.get<Country[]>(url, { params: params });
     return this.http.get<Country[]>(url);
   }
+
+  getAll(): Observable<Country[]>{
+    const url = `${ this.apiURL }/all/`;
+    return this.http.get<Country[]>(url);
+  }
+
+
 }

@@ -13,9 +13,28 @@
       </app-pais-input>
     </div>
   </div>
-</div>
 
-<hr>
+  <ul *ngIf="mostrarSugerencias"
+    class="list-group">
+    <li *ngFor="let pais of paisesSugeridos"
+      class="list-group-item list-group-item-action">
+      <a
+        class="nav-link"
+        [routerLink]="['/pais', pais.cca3]"><img class="small-flag" [src]="pais.flags.svg"> {{pais.name.common}}</a>
+    </li>
+
+    <li class="list-group-item list-group-item-action">
+      <a class="nav-link"
+        (click)="buscarSugerido(termino)"
+      >
+        Buscar {{ termino }}
+      </a>
+    </li>
+  </ul>
+
+  <hr>
+
+</div>
 
 <div *ngIf="hayError"
   class="alert alert-danger">
