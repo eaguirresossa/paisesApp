@@ -17,7 +17,7 @@
     <button
       *ngFor="let region of regiones"
       [class]="getClaseCSS( region )"
-      (click)="activarRegion( region ); buscar( region )">
+      (click)="activarRegion( region );">
       {{ region | titlecase }}
     </button>
   </div>
